@@ -1,0 +1,9 @@
+.header {
+  background-color: rgb(94, 89, 89);
+  height: 100px;
+  place-items: center;
+}
+.header > * {
+  height: 100px;
+  width: 100px;
+}

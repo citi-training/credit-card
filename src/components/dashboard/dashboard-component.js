@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import './dashboard-component.css';
 
-import ListComponent from '../list/list-component';
+import React, { useEffect, useState } from 'react';
+
 import CustomerInfoComponent from '../customer-info/info-component';
-
-
+import ListComponent from '../list/list-component';
+import logo from '../../assets/citi.png'
 
 const DashBoardComponent = () => {
     return(
         <div>
+            <div className="header"><img src={logo}/></div>
             <div>
             <h3>Search Bar component</h3>
             </div>
