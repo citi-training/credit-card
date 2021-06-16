@@ -1,4 +1,7 @@
+import DashBoardComponent from './components/dashboard/dashboard-component';
+
 import './App.css';
+
 
 function App() {
   return (
@@ -6,6 +9,7 @@ function App() {
       <h1>
       Transaction Application
       </h1>
+      <DashBoardComponent></DashBoardComponent>
     </div>
   );
 }
