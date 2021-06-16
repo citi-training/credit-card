@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
+import ListComponent from '../list/list-component';
+import CustomerInfoComponent from '../customer-info/info-component';
+
 
 
 const DashBoardComponent = () => {
     return(
         <div>
-            <h2>Dashboard container</h2>
+            <div>
+            <h3>Search Bar component</h3>
+            </div>
+            <div>
+                <CustomerInfoComponent></CustomerInfoComponent>
+            </div>
+            <div>
+                <ListComponent></ListComponent>
+            </div>
         </div>
     );
 }
