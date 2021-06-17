@@ -14,7 +14,8 @@ const useStyles = makeStyles({
       minWidth: 650,
     },
     tableHead: {
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        borderBottom:'none'
     },
     tableTitle: {
         fontWeight: 'bold',
@@ -31,20 +32,26 @@ const useStyles = makeStyles({
     }
   });
 
-  function createData(id, employeeID, businessName, amount, date) {
-    return { id, employeeID, businessName, amount, date };
-  }
+//   function createData(id, employeeID, businessName, amount, date) {
+//     return { id, employeeID, businessName, amount, date };
+//   }
   
-  const rows = [
-    createData(1000, 1, "Apple", "$"+1000000, "2020/01/10"),
-    createData(1001, 2, "Microsoft", "$"+37000, "2020/01/10"),
-    createData(1002, 3, "Oracle", "$"+24000, "2020/01/10"),
-    createData(1004, 4, "Tesla", "$"+67000, "2020/01/10"),
-    createData(1005, 5, "Tim Hortons", "$"+49000, "2020/01/10"),
-  ];
+//   const rows = [
+//     createData(1000, 1, "Apple", "$"+1000000, "2020/01/10"),
+//     createData(1001, 2, "Microsoft", "$"+37000, "2020/01/10"),
+//     createData(1002, 3, "Oracle", "$"+24000, "2020/01/10"),
+//     createData(1004, 4, "Tesla", "$"+67000, "2020/01/10"),
+//     createData(1005, 5, "Tim Hortons", "$"+49000, "2020/01/10"),
+//   ];
 
-const ListComponent = () => {
+const ListComponent = (props) => {
     const classes = useStyles();
+    const [rows, setRows] = useState([]);
+
+    useEffect(() => {
+        setRows(props.content)
+        console.log(props.content);
+      }, [props.content]);
 
     return(
         <div className={classes.container}>
@@ -72,12 +79,12 @@ const ListComponent = () => {
                     </TableHead>
                     <TableBody>
                         {rows.map((row) => (
-                            <TableRow key={row.name}>
+                            <TableRow key={row.id}>
                                 <TableCell component="th" scope="row" style={{borderBottom:"none"}}>
                                     {row.id}
                                 </TableCell>
-                                <TableCell align="left" style={{borderBottom:"none"}}>{row.employeeID}</TableCell>
-                                <TableCell align="left" style={{borderBottom:"none"}}>{row.businessName}</TableCell>
+                                <TableCell align="left" style={{borderBottom:"none"}}>{row.employee_id}</TableCell>
+                                <TableCell align="left" style={{borderBottom:"none"}}>{row.business_name}</TableCell>
                                 <TableCell align="left" style={{borderBottom:"none"}}>{row.amount}</TableCell>
                                 <TableCell align="right" style={{borderBottom:"none"}}>{row.date}</TableCell>
                             </TableRow>
