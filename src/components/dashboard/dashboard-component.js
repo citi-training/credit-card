@@ -1,5 +1,6 @@
 import './dashboard-component.css';
-
+import Input from '@material-ui/core/Input'
+import Button from '@material-ui/core/Button'
 import React, { useEffect, useState } from 'react';
 
 import CustomerInfoComponent from '../customer-info/info-component';
@@ -10,8 +11,10 @@ const DashBoardComponent = () => {
     return(
         <div>
             <div className="header"><img src={logo}/></div>
-            <div>
-            <h3>Search Bar component</h3>
+            <div classname="testing">
+                <p />Search Employee id              
+                <Input />
+                <Button variant="contained" color="primary">search</Button>
             </div>
             <div>
                 <CustomerInfoComponent></CustomerInfoComponent>
