@@ -1,10 +1,9 @@
 import './dashboard-component.css';
-import Input from '@material-ui/core/Input'
-import Button from '@material-ui/core/Button'
 import React, { useEffect, useState, useRef, useCallback } from 'react';
-
+import { Button } from 'semantic-ui-react';
 import CustomerInfoComponent from '../customer-info/info-component';
 import ListComponent from '../list/list-component';
+import TextField  from '@material-ui/core/TextField'
 import logo from '../../assets/citi.png'
 import axios from 'axios';
 
@@ -46,11 +45,13 @@ const DashBoardComponent = () => {
 
     return(
         <div>
-            <div className="header"><img src={logo}/></div>
-            <div>
-                <p />Search Employee id              
-                <Input onChange={inputHandler}/>
-                <Button variant="contained" color="primary" disabled={isSending} onClick={sendRequest}>search</Button>
+            <div className="header"><img src={logo}/></div>            
+            <div classname="search" 
+                style={{ display: "flex", flexDirection: "row", alignSelf: "conter", justifyContent: "center" }}>
+                <form className="input" noValidate autoComplete="off">
+                    <TextField id="standard-basic" label="Employee Id" onChange={inputHandler}/>
+                </form>
+                <Button variant="contained" color="primary" disabled={isSending} onClick={sendRequest}> Search </Button>  
             </div>
             <div>
                 <CustomerInfoComponent></CustomerInfoComponent>
