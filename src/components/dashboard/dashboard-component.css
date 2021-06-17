@@ -2,27 +2,19 @@
   background-color: rgb(94, 89, 89);
   height: 100px;
   place-items: center;
+  margin-bottom: 15px;
 }
 .header > * {
   height: 100px;
   width: 100px;
 }
 
-.testing {
-  position: fixed;
-  padding: 2em;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+.search {
+  /* margin-top: 15px;
+  margin-bottom: 15px; */
 }
 
-.testing > Input {
-  margin-top: 15px;
-  margin-bottom: 15px;
-  margin-left: 50px;
-}
-
-.testing > button {
-  margin-top: 15px;
-  margin-bottom: 15px;
+.search > * {
+  font-family: sans-serif;
+  font-weight: 600;
 }
