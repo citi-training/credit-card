@@ -11,9 +11,9 @@ const DashBoardComponent = () => {
     return(
         <div>
             <div className="header"><img src={logo}/></div>
-            <div classname="testing">
+            <div className="testing">
                 <p />Search Employee id              
-                <Input />
+                <Input name="id"/>
                 <Button variant="contained" color="primary">search</Button>
             </div>
             <div>

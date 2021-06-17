@@ -8,13 +8,13 @@
   width: 100px;
 }
 
-.testing {
+/*.testing {
   position: fixed;
   padding: 2em;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-}
+}*/
 
 .testing > Input {
   margin-top: 15px;
