@@ -2,29 +2,14 @@
   background-color: rgb(94, 89, 89);
   height: 100px;
   place-items: center;
+  margin-bottom: 15px;
 }
 .header > * {
   height: 100px;
   width: 100px;
 }
 
-.testing {
-  font-size: 14px;
-  position: relative;
-  left: -242px;
-}
-
-.testing > h3 {
-  font-size: 15px;
-  position: relative;
-  left: -65px;
-}
-
-
-
-.testing > button {
-  background-color : rgb(68, 176, 249);
-  position: relative;
-  left: 20px;
-  
+.search > * {
+  font-family: sans-serif;
+  font-weight: 600;
 }
