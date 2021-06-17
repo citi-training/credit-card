@@ -1,4 +1,5 @@
 import './dashboard-component.css';
+import TextField from '@material-ui/core/TextField';
 import Input from '@material-ui/core/Input'
 import Button from '@material-ui/core/Button'
 import React, { useEffect, useState } from 'react';
@@ -12,9 +13,9 @@ const DashBoardComponent = () => {
         <div>
             <div className="header"><img src={logo}/></div>
             <div className="testing">
-                <p />Search Employee id              
-                <Input name="id"/>
-                <Button variant="contained" color="primary">search</Button>
+                <h3>Search Employee id   </h3>           
+                <TextField name="id" variant="outlined" size="small"/>
+                <Button variant="contained" color="primary" size="large">search</Button>
             </div>
             <div>
                 <CustomerInfoComponent></CustomerInfoComponent>

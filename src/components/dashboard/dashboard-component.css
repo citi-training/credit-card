@@ -8,21 +8,23 @@
   width: 100px;
 }
 
-/*.testing {
-  position: fixed;
-  padding: 2em;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}*/
-
-.testing > Input {
-  margin-top: 15px;
-  margin-bottom: 15px;
-  margin-left: 50px;
+.testing {
+  font-size: 14px;
+  position: relative;
+  left: -242px;
 }
 
+.testing > h3 {
+  font-size: 15px;
+  position: relative;
+  left: -65px;
+}
+
+
+
 .testing > button {
-  margin-top: 15px;
-  margin-bottom: 15px;
+  background-color : rgb(68, 176, 249);
+  position: relative;
+  left: 20px;
+  
 }
