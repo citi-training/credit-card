@@ -9,9 +9,10 @@ import axios from 'axios';
 
 const DashBoardComponent = () => {
 
-    const [id, setId] = useState("");
+    const [id, setId] = useState("0");
     const [data, setData] = useState([]);
     const [isSending, setIsSending] = useState(false);
+    const [load, setLoad] = useState(false);
     const isMounted = useRef(true)
 
     // set isMounted to false when we unmount the component
@@ -27,14 +28,17 @@ const DashBoardComponent = () => {
         if (isSending) return
         // update state
         setIsSending(true)
+        setLoad(true);
         // send the actual request
         let response = await axios('/dev/transactions');
         let data = await response.data;
         setData(data);
+        //setEmpId(id);
         //console.log(data);
         // once the request is sent, update state again
         if (isMounted.current) // only update if we are still mounted
-          setIsSending(false)
+          setIsSending(false);
+          //setLoad(false);
       }, [isSending])
 
     const inputHandler = (e) => {
@@ -48,14 +52,18 @@ const DashBoardComponent = () => {
             <div className="header"><img src={logo}/></div>            
             <div classname="search" 
                 style={{ display: "flex", flexDirection: "row", alignSelf: "conter", justifyContent: "center" }}>
-                <form className="input" noValidate autoComplete="off">
+                {/* <form className="input" noValidate autoComplete="off">
                     <TextField id="standard-basic" label="Employee Id" onChange={inputHandler}/>
-                </form>
+                </form> */}
+                <TextField id="standard-basic" label="Employee Id" onChange={inputHandler}/>
                 <Button variant="contained" color="primary" disabled={isSending} onClick={sendRequest}> Search </Button>  
             </div>
-            <div>
-                <CustomerInfoComponent></CustomerInfoComponent>
-            </div>
+            { load ? <div>
+                <CustomerInfoComponent emp={id}></CustomerInfoComponent>
+            </div> :""}
+            {/* <div>
+                <CustomerInfoComponent emp={id}></CustomerInfoComponent>
+            </div> */}
             <div>
                 <ListComponent content={data}></ListComponent>
             </div>
